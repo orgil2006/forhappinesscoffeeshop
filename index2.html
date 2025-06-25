@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Happiness Coffee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6f4e37;
+            --secondary: #c0a080;
+            --accent: #6f4e37;
+            --light: #f8f5f0;
+            --dark: #3e2723;
+            --text: #5a4a42;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark);
+            font-weight: 700;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            font-size: 1.4rem;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        .btn:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.4s ease;;
+            background: rgba(248, 245, 240, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .catering-offerings {
+    padding: 60px 5%;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+
+.section-title {
+    font-size: 2.5rem;
+    color: #6f4e37;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.offering-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+.offering-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.offering-item h3 {
+    font-size: 1.5rem;
+    color: #6f4e37;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.offering-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(23, 23, 23, 0.4), rgba(47, 47, 47, 0.4)), url('crazyback.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* About Section */
+        .about {
+            padding: 150px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image img:hover {
+            transform: scale(1.05);
+        }
+
+
+        .experiences {
+    padding: 60px 5%;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #6f4e37;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.experience-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+.experience-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.experience-item h3 {
+    font-size: 1.5rem;
+    color: #6f4e37;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.experience-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.choice-cards {
+    display: grid; /* Use CSS Grid for two-column layout */
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px; /* Add spacing between cards */
+    margin-top: 20px;
+}
+
+.choice-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effect */
+}
+
+.choice-card:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.choice-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Ensure the image fits within the card */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.choice-card h3 {
+    font-size: 1.5rem;
+    color: #395144;
+    margin-bottom: 10px;
+}
+
+.choice-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.btn-select {
+    background-color: #395144;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-select:hover {
+    background-color: #ffc845; /* Change button color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .choice-cards {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+    }
+}
+
+        /* Menu Section */
+        .menu {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, var(--light) 70%, #f0e6d8 100%);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .menu-item-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .menu-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-item:hover .menu-item-img img {
+            transform: scale(1.1);
+        }
+
+        .menu-item-content {
+            padding: 25px;
+        }
+
+        .menu-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .menu-item p {
+            margin-bottom: 15px;
+            color: #777;
+        }
+
+        .price {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        .catering-orders {
+    padding: 60px 5%;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #6f4e37;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.order-form {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+.order-form label {
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.order-form button {
+    background-color: #6f4e37;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-form button:hover {
+    background-color: #ffc845;
+}
+        /* Location Section */
+        .location {
+            padding: 100px 0;
+        }
+
+        .location-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .location-info {
+            flex: 1;
+        }
+
+        .hours {
+            margin: 30px 0;
+        }
+
+        .hours li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .map {
+            flex: 1;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .footer-col {
+            flex: 1;
+            padding: 0 20px;
+        }
+
+        .footer-col h3 {
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            color: beige;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .newsletter form {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .newsletter button {
+            background: var(--accent);
+            color: var(--dark);
+            border: none;
+            padding: 0 20px;
+            font-weight: 600;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter button:hover {
+            background: #ffc845;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .about-content, .location-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-wrap: wrap;
+            }
+            
+            .footer-col {
+                flex: 0 0 50%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--light);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+            }
+            
+            nav ul.active {
+                transform: translateY(0);
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .footer-col {
+                flex: 0 0 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+    .experiences-grid {
+        grid-template-columns: 1fr; /* Stacks items vertically on smaller screens */
+    }
+
+    .experience-item img {
+        height: auto; /* Adjust image height for smaller screens */
+    }
+
+    .experience-item h3 {
+        font-size: 1.2rem; /* Reduce font size for smaller screens */
+    }
+
+    .experience-item p {
+        font-size: 0.9rem; /* Reduce font size for smaller screens */
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">For <span>Happiness</span></a>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#testimonials">Catering order</a></li>
+                    <li><a href="#about">Our experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index1.html">MON🇲🇳</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>FOR HAPPINESS</h1>
+            <p>We offer a unique catering service that combines freshly brewed coffee with live violin performances. Our service brings a warm atmosphere and soothing melodies to your event, all in one experience. We also have experience serving international guests and delegates, ensuring a service that meets global standards.</p>
+            
+            <a href="#menu" class="btn"> Order Catering</a>
+        </div>
+    </section>
+
+<!-- Offering Section -->
+<section class="catering-offerings" id="catering-offerings">
+    <div class="container">
+        <h2 class="section-title">Catering Service Options</h2>
+        <p class="section-description">
+            Our catering service is designed to make your event more flavorful and memorable. Choose the option that best suits your occasion from the selections below.
+        </p>
+        <div class="offerings-grid">
+            <!-- Basic Service -->
+            <div class="offering-item">
+                <img src="IMG_6276.jpg" alt="Basic Service">
+                <h3>Basic Service Package</h3>
+                <p>Freshly brewed coffee and desserts to make your event more delicious.</p>
+            </div>
+            <!-- Musical Service -->
+            <div class="offering-item">
+                <img src="IMG_6274.jpg" alt="Musical Service">
+                <h3>Musical performance</h3>
+                <p>Live violin performance to create a calm and soothing atmosphere.</p>
+            </div>
+            <!-- Premium Service -->
+            <div class="offering-item">
+                <img src="IMG_6273.jpg" alt="Premium Service">
+                <h3>Full-Service Package</h3>
+                <p>Coffee, desserts, and live music — the perfect combination to make your event unforgettable.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- Catering Orders Form Section -->
+ <section class="catering-orders" id="catering-orders">
+    <div class="container">
+        <h2 class="section-title"> Catering Order</h2>
+        <p class="section-description">
+            Our catering service aims to make your event flavorful and unforgettable. Kindly complete the form below to submit your order.
+        </p>
+        <form action="https://formspree.io/f/{your_form_id}" method="POST" class="order-form">
+            <label for="name">Your name:</label>
+            <input type="text" id="name" name="name" required placeholder="Your full name">
+
+            <label for="phone">Phone number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{8,13}" placeholder="example: (+976)9900-1234">
+
+            <label for="email">E-mail address:</label>
+            <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+
+            <label for="service">Choose Your Service:</label>
+            <select id="service" name="service" required>
+                <option value="">-- Choose Your Service --</option>
+                <option value="coffee">Basic Service Package</option>
+                <option value="pastries">Musical performance</option>
+                <option value="full-service">Full-Service Package</option>
+            </select>
+
+            <div class="choice-cards">
+                <!-- Card 1 -->
+                <div class="choice-card">
+                    <img src="https://www.saanich.ca/assets/Parks~Recreation~and~Community~Services/Images/Recreation/Community~Services/Community~Special~Events/2023%20Pride%20-%20crowd.jpg" alt="Public Event">
+                    <h3>Public event</h3>
+                    <p>Catering services for large events, celebrations, and public gatherings.</p>
+                    
+                </div>
+            
+                <!-- Card 2 -->
+                <div class="choice-card">
+                    <img src="https://static.wixstatic.com/media/b7eb67_d39408c9be4342a8871a621fe07e9513~mv2.jpg/v1/fill/w_640,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/b7eb67_d39408c9be4342a8871a621fe07e9513~mv2.jpg" alt="Private Event">
+                    <h3>Private event</h3>
+                    <p>Suitable catering services for weddings, parties, exhibitions, corporate celebrations, family gatherings, and more.</p>
+                   
+                </div>
+            </div>
+
+            <label for="service">The type of your event</label>
+            <select id="service" name="service" required>
+              
+                <option value="coffee">Public event</option>
+                <option value="pastries">Private event</option>
+              
+            </select>
+
+            <label for="message">details:</label>
+            <textarea id="message" name="message" rows="1" placeholder="the number of guests (approximately)"></textarea>
+            <textarea id="message" name="message" rows="1" placeholder="Location"></textarea>
+            <textarea id="message" name="message" rows="1" placeholder="What type of celebration/event is this?"></textarea>
+            <p>For any inquiries or further assistance, feel free to reach out to us at (+976)8085-2502 or (+976) 9969-3235</p> 
+           
+
+            <button type="submit" class="btn">Submit an Order</button>
+        </form>
+    </div>
+</section>
+
+
+    <!-- Our Experiences Section -->
+<section class="experiences" id="experiences">
+    <div class="container">
+        <h2 class="section-title">Our catering experience</h2>
+        <p class="section-description">
+            Our experience offers you the unique opportunity to enjoy the perfect harmony of nature, music, and coffee. The photos below showcase some of the highlights from our events.
+        </p>
+        <div class="experiences-grid">
+            <!-- Placeholder for 5 photos with brief info -->
+            <div class="experience-item">
+                <img src="Frame 1.jpg" alt="Experience 1">
+                <h3>Grand Opening of ШИНЭ 100 АЙЛ</h3>
+                <p>At the opening, we served beverages to foreign investors and participated in the ceremony with a musical performance.</p>
+            </div>
+            <div class="experience-item">
+                <img src="Frame 3.jpg" alt="Experience 2">
+                <h3>ARC Ekiden 2024</h3>
+                <p>We served hot and cold beverages to the marathon runners, including international participants, and took part in the opening ceremony with a musical performance.
+
+                </p>
+            </div>
+            <div class="experience-item">
+                <img src="IMG_5238.jpg" alt="Experience 3">
+                <h3>Khan-Uul District Citizens’ Representatives Meeting</h3>
+                <p>At the request of the Khan-Uul District Governor, we provided catering services during the regular meeting of the Citizens' Representative Khural.</p>
+            </div>
+            <div class="experience-item">
+                <img src="IMG_6245.jpg" alt="Experience 4">
+                <h3>ARC Ekiden 2025</h3>
+                <p>We served refreshments to help refresh the marathon runners and participated in the opening ceremony with a musical performance. The event was also attended by foreign delegates from Japan.</p>
+            </div>
+            <div class="experience-item">
+                <img src="IMG_6428.HEIC.jpg.jpg" alt="Experience 5">
+                <h3> Mongolian Heritage "Children of the Legacy"</h3>
+                <p>We participated in a horse archery event on Children's Day, providing both hot and cold beverages to attendees.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+   
+
+  
+
+     <!-- Menu Section -->
+     <section class="menu" id="menu">
+        <div class="container">
+            <h2 class="section-title"> Our Product Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://www.jiunyo.com/upfile/image/c43ac63153d467c3403c1cf7e9579720522e1f9b_p6.jpg" alt="Espresso">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Americano</h3>
+                        <p>Crafted from high-quality ROC beans, our coffee offers a rich aroma and deep flavor — made for true coffee lovers.</p>
+                        <div class="price">₮7900</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://media.istockphoto.com/id/1472380454/photo/paper-takeaway-cups-of-coffee-with-cardboard-sleeves-on-glass-table-above-view.jpg?s=612x612&w=0&k=20&c=zfUpY1p01T5KywOc4HeezIYknBxrx87x94dppmWO9cM=" alt="Cappuccino">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Classic Latte</h3>
+                        <p>Made from high-quality ROC beans, this aromatic and full-bodied coffee is a true delight for passionate coffee enthusiasts</p>
+                       
+                        <div class="price">₮8900</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://img.freepik.com/premium-photo/hot-coffee-latte-with-latte-art-milk-foam-cup-made-paper-wood-desk-top-view-as-breakfast-coffee-shop-cafeduring-business-work-concept_29332-5518.jpg" alt="Cold Brew">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Caramel Latte</h3>
+                        <p>Made from high-quality ROC beans, this aromatic and full-bodied coffee is a true delight for passionate coffee enthusiasts.
+
+                        </p>
+                       
+                        <div class="price">₮8900</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://t4.ftcdn.net/jpg/01/45/83/63/360_F_145836339_ZHBXZ8JgfaakA2Kqspik8DkW7VfCZsRy.jpg" alt="Matcha Latte">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Vanilla Latte</h3>
+                        <p>Made from high-quality ROC beans, this aromatic and full-bodied coffee is a true delight for passionate coffee enthusiasts.
+
+                        </p>
+                       
+                        <div class="price">₮8900</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://www.shutterstock.com/shutterstock/videos/3447274053/thumb/1.jpg?ip=x480" alt="Croissant">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Matcha Latte</h3>
+                        <p>Made from high-quality ROC beans, this aromatic and full-bodied coffee is a true delight for passionate coffee enthusiasts.
+
+                        </p>
+                       
+                        <div class="price">₮8900</div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://img.freepik.com/premium-photo/tea-with-lemon-ginger-paper-cup_67473-409.jpg?w=360" alt="Avocado Toast">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Apple tea</h3>
+                        
+                        <div class="price">₮7900</div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://img.freepik.com/premium-photo/cup-with-hot-mulled-red-wine_1048944-24810192.jpg" alt="Avocado Toast">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Lemon tea</h3>
+                       
+                        <div class="price">₮7900</div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://m.media-amazon.com/images/I/61oGZ9S5HWL.jpg" alt="Avocado Toast">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3> Vinchaod Wine-Inspired Tea</h3>
+                        <p>Made from natural ingredients and completely alcohol-free. </p>
+                        <div class="price">₮7900</div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://static.vecteezy.com/system/resources/previews/007/184/959/large_2x/closeup-of-disposable-takeaway-paper-cup-of-hot-coffee-latte-with-milk-foam-on-wooden-table-free-photo.jpg" alt="Avocado Toast">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Hot Curd</h3>
+                        <p>Brewed the traditional way.</p>
+                        <div class="price">₮6900</div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://t4.ftcdn.net/jpg/03/06/59/83/360_F_306598353_H3xhBGWjWo2k4MyKZN3daewpOYrUnjTv.jpg" alt="Avocado Toast">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Fresh Fruit Salad</h3>
+                        <div class="price">₮9900</div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-img">
+                        <img src="https://theeburgerdude.com/wp-content/uploads/2023/12/Cookie-New-01-scaled.jpg" alt="Avocado Toast">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>Cookie</h3>
+                        <div class="price">₮3900</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- About Section -->
+     <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Our story</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    
+                    <p>Founded in 2021, For Happiness is a unique startup that combines the sounds of live music with the rich taste of freshly brewed coffee in a nature-friendly environment. Located near Bogd Mountain on the outskirts of the city, this business project is the joint creation of four young entrepreneurs aiming to make people’s weekends more peaceful and joyful through music, nature, and coffee.
+
+                        The startup operates with two main services. One team member performs live music (violin), focusing on captivating guests and creating a tranquil atmosphere, while the other members prepare and serve freshly brewed coffee to customers. For Happiness operates regularly on weekends from 7:00 AM to 1:00 PM, providing guests with an experience that blends nature, music, and coffee.
+                        
+                        In its early days, For Happiness faced several challenges, including financial miscalculations and water shortages, but thanks to the members’ perseverance and creative thinking, the operation steadily improved step by step.
+                        
+                        Today, For Happiness is a growing startup founded on creativity, resilience, and faith in young people. It strives to create memorable moments filled with music, coffee, and tranquility amidst nature for all its guests.</p>
+                
+                    <a href="#location" class="btn" style="margin-top: 20px;">Visit us</a>
+                </div>
+                <div class="about-image">
+                    <img src="bidnar.jpg" alt="Coffee Shop Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Location Section -->
+    <section class="location" id="location">
+        <div class="container">
+            <h2 class="section-title">Our Mountain Spot — Open Weekends Only</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Our address</h3>
+                    <p>Bogd Khan Mountain "Хэрэмхэн зогсоол"<br>Khan-Uul District, 22nd Khoroo</p>
+                    
+                    <div class="hours">
+                        <h3>Working Hours</h3>
+                        <ul>
+                           
+                            <li><span>Saturday</span> <span>7:00 AM - 13:00 PM</span></li>
+                            <li><span>Sunday</span> <span>7:00 AM - 13:00 PM</span></li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Contact Us</h3>
+                    <p>Phone number: (+976) 8085-2502, (+976) 9969-3235<br>
+                    Email address: forhappiness4hp@gmail.com</p>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d8930.656005733752!2d106.89962158597149!3d47.848036865070235!3m2!1i1024!2i768!4f13.1!5e1!3m2!1smn!2smn!4v1749102256333!5m2!1smn!2smn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Social links</h3>
+                    <p>Click the icons below to visit our social media pages.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/19bbcbdu7f/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/for_happiness_coffeeshop?utm_source=ig_web_button_share_sheet&igsh=MXR3Nmg3c3ZzeW9mNw=="><i class="fab fa-instagram"></i></a>
+                       
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links
+                    </h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home" style="color: white; text-decoration: none; display: block; padding: 5px 0;">Home</a></li>
+                        <li><a href="#about" style="color: white; text-decoration: none; display: block; padding: 5px 0;">About Us</a></li>
+                        <li><a href="#menu" style="color: white; text-decoration: none; display: block; padding: 5px 0;">Menu</a></li>
+                        <li><a href="#location" style="color: white; text-decoration: none; display: block; padding: 5px 0;">Location</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('nav ul');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileToggle.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
